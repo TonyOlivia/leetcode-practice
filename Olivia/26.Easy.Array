@@ -23,3 +23,17 @@ class Solution:
                     i+=1
                     nums[i] = item
             return i+1
+
+3nd ver. solution
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+            i = 0
+            for j in range(1,len(nums)):
+                if nums[i] != nums[j]:
+                    nums[i+1] = nums[j]
+                    i +=1
+            return i+1 if nums else 0
+
+
+Noticed that 1. nums can be None list with length 0
+             2. range(x) does not contain x which from 0 to x-1
