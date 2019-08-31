@@ -1,0 +1,12 @@
+1st
+sub query
+SELECT max(Salary) AS SecondHighestSalary
+FROM Employee
+WHERE Salary < (SELECT max(Salary) FROM Employee)
+
+Noitced that Having can only be used abfter group by(aggregation), where clause can not use aggregation function like count, max, min
+If needed, then using sub query instead.
+
+
+2nd
+ifnull, limit, offset
