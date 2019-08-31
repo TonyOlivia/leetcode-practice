@@ -9,4 +9,20 @@ If needed, then using sub query instead.
 
 
 2nd
-ifnull, limit, offset
+ifnull, limit, offset, distinct
+SELECT 
+    IFNULL(
+        (SELECT DISTINCT Salary
+        FROM Employee
+        ORDER BY SALARY DESC
+        LIMIT 1 OFFSET 1)
+        ,NULL) AS SecondHighestSalary
+
+Note:
+IFNULL(sentence, IF NULL RESULT)
+LIMIT 输出几行结果
+offset 从第几行开始输出
+sql默认升序
+
+OFFSET can only be used with ORDER BY clause. It cannot be used on its own.
+OFFSET value must be greater than or equal to zero. It cannot be negative, else return error.
