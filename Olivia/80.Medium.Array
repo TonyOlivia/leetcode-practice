@@ -21,3 +21,9 @@ def removeDuplicates(self, nums):
             nums[i] = n
             i += 1
     return i
+
+i points to the number which should be replaced. 
+Actually,sine it is already sorted, in the result you only need to guarantee that every number is larger than
+its previous number, which means that nums[i]>nums[i-2].
+So we only need to check item whether satifes this condition to replace i. Once item larger than nums[i], then it 
+can replace i.
